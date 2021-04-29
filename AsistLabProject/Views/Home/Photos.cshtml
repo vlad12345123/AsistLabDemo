@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Photos>
+@*@{
+        ViewData["Title"] = "Albums";
+    }
+
+    <h1>Albums</h1>*@
+
+<div class="text-center">
+    <table id="postsTable" class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">AlbumId</th>
+                <th scope="col">Title</th>
+                <th scope="col">ThumbnailUrl</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var photo in Model)
+                {
+                        <tr>
+                            <td>@photo.Id</td>
+                            <td>@photo.AlbumId</td>
+                            <td>@photo.Title</td>
+                            <td class="w-25">
+                                <img src="@photo.ThumbnailUrl" class="img-fluid img-thumbnail" alt="Sheep">
+                            </td>
+                        </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
