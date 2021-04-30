@@ -72,7 +72,11 @@ namespace AsistLabProject.Controllers
             jAlbums.SelectToken("[3]").Remove(); //remove fourth object
 
             //Group by title
+<<<<<<< HEAD
             var jObjectGroup = jAlbums.GroupBy(x => x["title"].ToList());
+=======
+            var jObjectGroup = jAlbums.GroupBy(x => x["title"]).ToList();
+>>>>>>> bf0a33277a40650e50de47844a24af28cb3dc6ae
 
             var kek = jObjectGroup.SelectMany(group => group);
 
