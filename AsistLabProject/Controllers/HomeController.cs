@@ -36,6 +36,10 @@ namespace AsistLabProject.Controllers
 
         public async Task<IActionResult> Photos()
         {
+            return View();
+        }
+        public async Task<IActionResult> GetPhotos()
+        {
             var client = new RestClient("https://jsonplaceholder.typicode.com/photos");
             var request = new RestRequest(Method.GET);
             IRestResponse response = await client.ExecuteAsync(request);
@@ -68,20 +72,13 @@ namespace AsistLabProject.Controllers
             jAlbums.SelectToken("[3]").Remove(); //remove fourth object
 
             //Group by title
-            var tokensByEmployeeNo = jAlbums.GroupBy(x => x["title"]).ToList();
+            var jObjectGroup = jAlbums.GroupBy(x => x["title"].ToList());
 
+            var kek = jObjectGroup.SelectMany(group => group);
 
+            var albumsJson = JsonConvert.SerializeObject(kek);
 
-            var albums = jAlbums.Select(x => new Photos
-            {
-                Id = (int)x["id"],
-                AlbumId = (int)x["albumId"],
-                Title = (string)x["title"],
-                Url = (string)x["url"],
-                ThumbnailUrl = (string)x["thumbnailUrl"]
-            }).ToList();
-
-            return View(albums);
+            return Content(albumsJson, "application/json");
         }
 
     }

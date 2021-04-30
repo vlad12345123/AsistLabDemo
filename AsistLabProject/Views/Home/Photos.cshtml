@@ -5,31 +5,97 @@
 
     <h1>Albums</h1>*@
 
-<div class="text-center">
-    <table id="postsTable" class="table">
-        <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">AlbumId</th>
-                <th scope="col">Title</th>
-                <th scope="col">ThumbnailUrl</th>
-            </tr>
-        </thead>
-        <tbody>
-            @{
-                foreach (var photo in Model)
+
+<table id="photosTable">
+    <thead>
+        <tr>
+            <th>AlbumId</th>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Url</th>
+        </tr>
+    </thead>
+</table>
+
+<link href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" />
+
+@section scripts{
+
+    <script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#photosTable").DataTable(
                 {
-                        <tr>
-                            <td>@photo.Id</td>
-                            <td>@photo.AlbumId</td>
-                            <td>@photo.Title</td>
-                            <td class="w-25">
-                                <img src="@photo.ThumbnailUrl" class="img-fluid img-thumbnail" alt="Sheep">
-                            </td>
-                        </tr>
+                    ajax: {
+                        url: "/Home/GetPhotos",
+                        type: "GET",
+                        contentType: "application/json",
+                        datatype: "json",
+                        dataSrc: function (json) {
+                            return json.data
+                        }
+                    },
+                    columns: [
+                        { data: "AlbumId" },
+                        { data: "Id" },
+                        { data: "Title" },
+                        { data: "Url" }
+
+                    ],
+                    error: function (error) {
+                        alert("Error = " + error);
+                    }
+                });
+        }
+    </script>
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div class="text-center">
+        <table id="postsTable" class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">AlbumId</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">ThumbnailUrl</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (var photo in Model)
+                    {
+                            <tr>
+                                <td>@photo.Id</td>
+                                <td>@photo.AlbumId</td>
+                                <td>@photo.Title</td>
+                                <td class="w-25">
+                                    <img src="@photo.ThumbnailUrl" class="img-fluid img-thumbnail" alt="Sheep">
+                                </td>
+                            </tr>
+                    }
                 }
-            }
-        </tbody>
-    </table>
-</div>
+            </tbody>
+        </table>
+    </div>*@
 
