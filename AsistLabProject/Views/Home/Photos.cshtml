@@ -9,10 +9,11 @@
 <table id="photosTable">
     <thead>
         <tr>
-            <th>AlbumId</th>
-            <th>Id</th>
-            <th>Title</th>
-            <th>Url</th>
+            <th>id</th>
+            <th>albumId</th>
+            <th>thumbNailUrl</th>
+            <th>title</th>
+            <th>url</th>
         </tr>
     </thead>
 </table>
@@ -32,22 +33,24 @@
                         type: "GET",
                         contentType: "application/json",
                         datatype: "json",
-                        dataSrc: function (json) {
-                            return json.data
-                        }
+                        dataSrc: "",
+                        //success: function (data) {
+                        //    console.log(data);
+                        //}
                     },
                     columns: [
-                        { data: "AlbumId" },
-                        { data: "Id" },
-                        { data: "Title" },
-                        { data: "Url" }
+                        { data: "id" },
+                        { data: "albumId" },
+                        { data: "title" },
+                        { data: "thumbnailUrl" },
+                        { data: "url" }
 
                     ],
                     error: function (error) {
                         alert("Error = " + error);
                     }
                 });
-        }
+        })
     </script>
 
 }
@@ -66,36 +69,4 @@
 
 
 
-
-
-
-
-
-@*<div class="text-center">
-        <table id="postsTable" class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">AlbumId</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">ThumbnailUrl</th>
-                </tr>
-            </thead>
-            <tbody>
-                @{
-                    foreach (var photo in Model)
-                    {
-                            <tr>
-                                <td>@photo.Id</td>
-                                <td>@photo.AlbumId</td>
-                                <td>@photo.Title</td>
-                                <td class="w-25">
-                                    <img src="@photo.ThumbnailUrl" class="img-fluid img-thumbnail" alt="Sheep">
-                                </td>
-                            </tr>
-                    }
-                }
-            </tbody>
-        </table>
-    </div>*@
 

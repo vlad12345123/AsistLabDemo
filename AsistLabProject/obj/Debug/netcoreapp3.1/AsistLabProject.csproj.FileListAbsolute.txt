@@ -147,8 +147,8 @@ C:\Users\0XDA0\source\repos\AsistLabProject\AsistLabProject\bin\Debug\netcoreapp
 C:\Users\0XDA0\source\repos\AsistLabProject\AsistLabProject\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\0XDA0\source\repos\AsistLabProject\AsistLabProject\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\0XDA0\source\repos\AsistLabProject\AsistLabProject\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
-C:\Users\0XDA0\source\repos\AsistLabProject\AsistLabProject\obj\Debug\netcoreapp3.1\AsistLabProject.csprojAssemblyReference.cache
 C:\Users\0XDA0\source\repos\AsistLabProject\AsistLabProject\obj\Debug\netcoreapp3.1\Razor\Views\Home\Posts.cshtml.g.cs
 C:\Users\0XDA0\source\repos\AsistLabProject\AsistLabProject\bin\Debug\netcoreapp3.1\RestSharp.dll
 C:\Users\0XDA0\source\repos\AsistLabProject\AsistLabProject\bin\Debug\netcoreapp3.1\libman.json
 C:\Users\0XDA0\source\repos\AsistLabProject\AsistLabProject\obj\Debug\netcoreapp3.1\Razor\Views\Home\Photos.cshtml.g.cs
+C:\Users\0XDA0\source\repos\AsistLabProject\AsistLabProject\obj\Debug\netcoreapp3.1\AsistLabProject.csprojAssemblyReference.cache
